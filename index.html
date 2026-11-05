@@ -2,512 +2,354 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Tipovačka</title>
 <meta name="description" content="Tipovačka sportovních zápasů – hokej, fotbal, olympiáda">
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="apple-touch-icon" href="logo.png">
 <meta name="theme-color" content="#0a0e1a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js" defer></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js" defer></script>
+<script src="app.js" defer></script>
 </head>
 <body>
-<div id="app">
-  <header class="app-header">
-    <div class="header-content">
-      <div class="logo">
-        <img src="logo.png" alt="Logo" class="logo-img" style="width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(99,102,241,0.5)); margin-right: 2px;">
-        <h1>Tipovačka</h1>
-        <span id="cloudStatus" class="cloud-status offline" title="Pouze místní paměť">☁️ Místní</span>
-      </div>
-      <div class="header-actions">
-        <button class="btn btn-icon" id="btnShare" title="Sdílet přehled"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
-        <button class="btn btn-icon" id="btnUploadTips" title="Nahrát tipy ze screenshotu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
-        <button class="btn btn-icon" id="btnAddMatch" title="Přidat zápas"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
-        <button class="btn btn-icon" id="btnSettings" title="Nastavení"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
-      </div>
+<header class="app-header">
+  <div class="header-content">
+    <div class="logo">
+      <img src="logo.jpg" alt="" class="logo-img" width="32" height="32">
+      <h1>Tipovačka</h1>
+      <span id="cloudStatus" class="cloud-status offline">☁️ Místní</span>
     </div>
-  </header>
-
-  <!-- TOURNAMENT TABS -->
-  <nav class="tabs-bar" id="tabsBar">
-    <div class="tabs-scroll" id="tabsScroll"></div>
-    <button class="btn btn-tab-new" id="btnNewTournament" title="Nová tipovačka">+ Nová</button>
-  </nav>
-
-  <!-- NO TOURNAMENT STATE -->
-  <div class="welcome-screen" id="welcomeScreen">
-    <div class="welcome-card">
-      <div class="welcome-icon">🏒</div>
-      <h2>Vítejte v Tipovačce!</h2>
-      <p>Vytvořte svou první tipovačku kliknutím na tlačítko níže.</p>
-      <button class="btn btn-primary btn-lg" id="btnWelcomeNew">🏆 Vytvořit tipovačku</button>
+    <div class="header-actions">
+      <button class="btn btn-icon" id="btnShare" title="Sdílet přehled" aria-label="Sdílet přehled"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+      <button class="btn btn-icon" id="btnUploadTips" title="Nahrát tipy" aria-label="Nahrát tipy"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></button>
+      <button class="btn btn-icon" id="btnAddMatch" title="Přidat zápas" aria-label="Přidat zápas"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+      <button class="btn btn-icon" id="btnSettings" title="Nastavení" aria-label="Nastavení"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
     </div>
   </div>
+</header>
 
-  <main class="main-content" id="mainContent">
-    <section class="card leaderboard-card" id="leaderboardSection">
-      <div class="card-header" style="display: flex; align-items: center; gap: 8px;">
-        <img src="rankings_badge.png" alt="Rankings" style="width: 28px; height: 28px; object-fit: contain; filter: drop-shadow(0 0 4px rgba(99,102,241,0.3));">
-        <h2 style="margin: 0;">Žebříček</h2>
-      </div>
-      <div class="card-body" id="leaderboardBody"></div>
-    </section>
-    
-    <section class="card chart-card" id="chartSection">
-      <div class="card-header" style="display: flex; align-items: center; gap: 8px;">
-        <span style="font-size: 20px; filter: drop-shadow(0 0 4px rgba(99,102,241,0.3));">📈</span>
-        <h2 style="margin: 0;">Vývoj bodů</h2>
-      </div>
-      <div class="card-body" style="padding: 12px; position: relative;">
-        <div id="progressChartContainer" style="width: 100%; height: 340px; overflow: hidden; position: relative;"></div>
-        <div id="chartTooltip" style="position: absolute; display: none; background: rgba(17, 24, 36, 0.95); border: 1px solid var(--border); border-radius: 8px; padding: 8px 12px; color: #fff; font-size: 11px; z-index: 10; pointer-events: none; backdrop-filter: blur(8px); box-shadow: 0 4px 16px rgba(0,0,0,0.5);"></div>
-      </div>
-    </section>
-    <section class="card matches-card" id="matchesSection">
-      <div class="card-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <h2 style="margin: 0;">📋 Zápasy</h2>
-          <span class="match-count" id="matchCount"></span>
-        </div>
-        <button class="btn btn-sm" id="btnBulkResultsOpen" style="background: rgba(99, 102, 241, 0.15); color: var(--accent); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 6px; cursor: pointer;">
-          📊 Hromadné výsledky
-        </button>
-      </div>
-      <div class="card-body" id="matchesBody"></div>
-    </section>
-  </main>
+<nav class="tabs-bar" id="tabsBar">
+  <div class="tabs-scroll" id="tabsScroll"></div>
+  <button class="btn-tab-new" id="btnNewTournament">+ Nová</button>
+</nav>
+
+<div class="welcome-screen" id="welcomeScreen">
+  <div class="welcome-card">
+    <div class="welcome-icon">🏒</div>
+    <h2>Vítejte v Tipovačce!</h2>
+    <p id="welcomeText">Vytvořte svou první tipovačku kliknutím na tlačítko níže.</p>
+    <button class="btn btn-primary btn-lg" id="btnWelcomeNew">🏆 Vytvořit tipovačku</button>
+  </div>
 </div>
 
-<!-- MODAL: New Tournament -->
+<main class="main-content" id="mainContent">
+  <section class="card">
+    <div class="card-header"><h2><img src="rankings_badge.png" alt="" class="h-icon">Žebříček</h2></div>
+    <div class="card-body" id="leaderboardBody"></div>
+  </section>
+
+  <section class="card">
+    <div class="card-header"><h2><span class="h-emoji">📈</span>Vývoj bodů</h2></div>
+    <div class="card-body chart-body">
+      <div id="progressChart" class="chart"></div>
+      <div id="chartTooltip" class="chart-tooltip" hidden></div>
+      <div id="chartLegend" class="chart-legend"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2><span class="h-emoji">📋</span>Zápasy <span class="match-count" id="matchCount"></span></h2>
+      <button class="btn btn-sm btn-soft" id="btnBulkResultsOpen">📊 Hromadné výsledky</button>
+    </div>
+    <div class="card-body" id="matchesBody"></div>
+  </section>
+</main>
+
+<!-- MODAL: Nová tipovačka -->
 <div class="modal-overlay" id="modalNewTournament">
   <div class="modal modal-lg">
-    <div class="modal-header"><h3>🏆 Nová tipovačka</h3><button class="btn-close" data-close="modalNewTournament">&times;</button></div>
-    <div class="modal-body">
-      <div class="form-group"><label>Název tipovačky</label><input type="text" id="inputTournamentName" placeholder="např. MS 2026"></div>
-      <div class="form-group"><label>Hráči / hráčky (oddělení čárkou)</label><input type="text" id="inputTournamentPlayers" placeholder="Kuba, Eliška, Dan, Tade, Maruš, Pavel, Rey"></div>
-      
-      <div class="form-group">
-        <label>Ikonka tipovačky</label>
-        <div class="icon-selector" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; align-items: center;">
-          <button type="button" class="btn-icon-select active" data-icon="🏒">🏒</button>
-          <button type="button" class="btn-icon-select" data-icon="⚽">⚽</button>
-          <button type="button" class="btn-icon-select" data-icon="🏆">🏆</button>
-          <button type="button" class="btn-icon-select" data-icon="🔥">🔥</button>
-          <button type="button" class="btn-icon-select" data-icon="🏀">🏀</button>
-          <button type="button" class="btn-icon-select" data-icon="🎾">🎾</button>
-          <button type="button" class="btn-icon-select" data-icon="🏎️">🏎️</button>
-          <button type="button" class="btn-icon-select" id="btnUploadCustomIcon" style="font-size: 14px; width: auto; padding: 0 12px; border-radius: 20px;">🖼️ Obrázek</button>
-          <input type="file" id="inputTournamentCustomImage" accept="image/*" style="display: none;">
-          <input type="text" id="inputCustomIcon" placeholder="Emoji 🎯" style="width: 80px; padding: 8px 10px; font-size: 14px; text-align: center; border-radius: var(--radius-xs); background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: #fff;">
-        </div>
-        <span id="customImageFileName" style="font-size: 11px; color: var(--text-muted); display: block; margin-top: 4px;"></span>
-      </div>
+    <div class="modal-header"><h3>🏆 Nová tipovačka</h3><button class="btn-close" data-close>&times;</button></div>
+    <div class="modal-body" data-tabgroup id="newTournamentTabs">
+      <div class="form-group"><label for="inputTournamentName">Název tipovačky</label><input type="text" id="inputTournamentName" placeholder="např. MS 2026"></div>
+      <div class="form-group"><label for="inputTournamentPlayers">Hráči / hráčky (oddělení čárkou)</label><input type="text" id="inputTournamentPlayers" placeholder="Kuba, Eliška, Dan, …"></div>
+      <div class="form-group"><label>Ikonka tipovačky</label><div class="icon-picker" id="newIconPicker"></div></div>
       <hr class="divider">
       <h4>Import zápasů</h4>
-      <p class="form-hint">Zvolte způsob importu zápasů. Můžete i kombinovat – přidat další později.</p>
-      <!-- Import method tabs -->
+      <p class="form-hint">Zvolte způsob importu. Další zápasy můžete přidat i později.</p>
       <div class="import-tabs">
-        <button class="import-tab active" data-method="paste" id="tabPaste">📋 Z textu</button>
-        <button class="import-tab" data-method="screenshot" id="tabScreenshot">📸 Ze screenshotu</button>
-        <button class="import-tab" data-method="none" id="tabNone">⏭️ Přeskočit</button>
+        <button class="import-tab" data-tab="paste">📋 Z textu</button>
+        <button class="import-tab" data-tab="screenshot">📸 Ze screenshotu</button>
+        <button class="import-tab" data-tab="none">⏭️ Přeskočit</button>
       </div>
-      <!-- Paste import -->
-      <div class="import-panel" id="panelPaste">
-        <div class="form-group">
-          <label>Vložte seznam zápasů</label>
-          <p class="form-hint">Jeden zápas na řádek. Formát: <code>Domácí - Hosté</code> nebo <code>Domácí - Hosté, datum, čas</code></p>
-          <textarea id="inputMatchesPaste" rows="8" placeholder="Finsko - Německo, 15.5., 16:20
-Kanada - Švédsko, 15.5., 16:20
-USA - Švýcarsko, 15.5., 20:20
-ČESKO - Dánsko, 15.5., 20:20
-..."></textarea>
-        </div>
+      <div data-pane="paste" class="form-group">
+        <p class="form-hint">Jeden zápas na řádek: <code>Domácí - Hosté</code> nebo <code>Domácí - Hosté, 15.5., 16:20</code></p>
+        <textarea id="inputMatchesPaste" rows="7" placeholder="Finsko - Německo, 15.5., 16:20&#10;Kanada - Švédsko, 15.5., 16:20&#10;Česko - Dánsko, 15.5., 20:20"></textarea>
       </div>
-      <!-- Screenshot import -->
-      <div class="import-panel" id="panelScreenshot" hidden>
-        <div class="upload-zone" id="uploadZoneMatches">
-          <input type="file" id="inputMatchesScreenshot" accept="image/*" hidden>
-          <div class="upload-placeholder" id="uploadMatchesPlaceholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p>Nahrajte screenshot s programem zápasů</p>
-          </div>
-          <img id="uploadMatchesPreview" class="upload-preview" hidden>
-        </div>
+      <div data-pane="screenshot">
+        <div class="upload-zone" id="uploadZoneMatches"></div>
+        <div class="ai-loading" id="importLoading" hidden><div class="spinner"></div><p>AI rozpoznává zápasy…</p></div>
+        <div id="importPreview" hidden><h4>Rozpoznané zápasy (<span id="importCount">0</span>):</h4><div id="importMatchesList" class="import-matches-list"></div></div>
       </div>
-      <!-- No import -->
-      <div class="import-panel" id="panelNone" hidden>
-        <p class="form-hint" style="text-align:center;padding:20px;">Zápasy můžete přidat ručně po vytvoření tipovačky.</p>
-      </div>
-      <div id="importLoading" class="ai-loading" hidden><div class="spinner"></div><p>AI rozpoznává zápasy ze screenshotu...</p></div>
-      <div id="importPreview" hidden>
-        <h4>Rozpoznané zápasy (<span id="importCount">0</span>):</h4>
-        <div id="importMatchesList" class="import-matches-list"></div>
-      </div>
+      <div data-pane="none"><p class="form-hint center pad">Zápasy můžete přidat ručně po vytvoření tipovačky.</p></div>
       <button class="btn btn-primary btn-full btn-lg" id="btnCreateTournament">🚀 Vytvořit tipovačku</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Add Match -->
+<!-- MODAL: Přidat zápas -->
 <div class="modal-overlay" id="modalAddMatch">
   <div class="modal">
-    <div class="modal-header"><h3>Přidat zápas</h3><button class="btn-close" data-close="modalAddMatch">&times;</button></div>
+    <div class="modal-header"><h3>Přidat zápas</h3><button class="btn-close" data-close>&times;</button></div>
     <div class="modal-body">
       <div class="form-row">
-        <div class="form-group"><label>Domácí</label><input type="text" id="inputHomeTeam" placeholder="např. Česko"></div>
+        <div class="form-group"><label for="inputHomeTeam">Domácí</label><input type="text" id="inputHomeTeam" placeholder="např. Česko"></div>
         <div class="form-group vs-label"><span>vs</span></div>
-        <div class="form-group"><label>Hosté</label><input type="text" id="inputAwayTeam" placeholder="např. Finsko"></div>
+        <div class="form-group"><label for="inputAwayTeam">Hosté</label><input type="text" id="inputAwayTeam" placeholder="např. Finsko"></div>
       </div>
       <div class="form-row">
-        <div class="form-group"><label>Datum</label><input type="date" id="inputMatchDate"></div>
-        <div class="form-group"><label>Čas</label><input type="time" id="inputMatchTime"></div>
+        <div class="form-group"><label for="inputMatchDate">Datum</label><input type="date" id="inputMatchDate"></div>
+        <div class="form-group"><label for="inputMatchTime">Čas</label><input type="time" id="inputMatchTime"></div>
       </div>
       <button class="btn btn-primary btn-full" id="btnSaveMatch">Uložit zápas</button>
-      <hr class="divider" style="margin: 16px 0;">
-      <button class="btn btn-outline btn-full" id="btnTriggerBulkImport" style="border-color: var(--accent); color: var(--accent);">🚀 Hromadný import zápasů</button>
+      <hr class="divider">
+      <button class="btn btn-outline btn-full btn-accent-outline" id="btnTriggerBulkImport">🚀 Hromadný import zápasů</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Bulk Import Matches -->
+<!-- MODAL: Hromadný import zápasů -->
 <div class="modal-overlay" id="modalBulkImport">
   <div class="modal modal-lg">
-    <div class="modal-header"><h3>🚀 Hromadný import zápasů</h3><button class="btn-close" data-close="modalBulkImport">&times;</button></div>
-    <div class="modal-body">
-      <p class="form-hint" style="margin-bottom:16px;">Vložte seznam zápasů (např. zkopírovaný z Excelu), nebo nahrajte screenshot programu zápasů.</p>
-      
-      <!-- Import method tabs -->
-      <div class="import-tabs" style="margin-bottom: 16px;">
-        <button class="import-tab active" data-bulk-method="paste" id="tabBulkPaste">📋 Vložit text</button>
-        <button class="import-tab" data-bulk-method="screenshot" id="tabBulkScreenshot">📸 Ze screenshotu</button>
+    <div class="modal-header"><h3>🚀 Hromadný import zápasů</h3><button class="btn-close" data-close>&times;</button></div>
+    <div class="modal-body" data-tabgroup id="bulkTabs">
+      <div class="import-tabs">
+        <button class="import-tab" data-tab="paste">📋 Vložit text</button>
+        <button class="import-tab" data-tab="screenshot">📸 Ze screenshotu</button>
       </div>
-
-      <!-- Paste Panel -->
-      <div class="import-panel" id="panelBulkPaste">
-        <div class="form-group">
-          <label>Seznam zápasů</label>
-          <p class="form-hint">Jeden zápas na řádek. Formát: <code>Domácí - Hosté</code> nebo <code>Domácí - Hosté, datum, čas</code></p>
-          <textarea id="inputBulkMatchesPaste" rows="10" placeholder="Finsko - Německo, 15.5., 16:20
-Kanada - Švédsko, 15.5., 16:20
-USA - Švýcarsko, 15.5., 20:20
-ČESKO - Dánsko, 15.5., 20:20"></textarea>
-        </div>
+      <div data-pane="paste" class="form-group">
+        <p class="form-hint">Jeden zápas na řádek: <code>Domácí - Hosté</code> nebo <code>Domácí - Hosté, 15.5., 16:20</code></p>
+        <textarea id="inputBulkMatchesPaste" rows="9" placeholder="Finsko - Německo, 15.5., 16:20&#10;Kanada - Švédsko, 15.5., 16:20"></textarea>
       </div>
-
-      <!-- Screenshot Panel -->
-      <div class="import-panel" id="panelBulkScreenshot" hidden>
-        <div class="upload-zone" id="uploadZoneBulkMatches">
-          <input type="file" id="inputBulkMatchesScreenshot" accept="image/*" hidden>
-          <div class="upload-placeholder" id="uploadBulkPlaceholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p>Nahrajte screenshot s programem zápasů</p>
-          </div>
-          <img id="uploadBulkPreview" class="upload-preview" hidden>
-        </div>
-        <div id="bulkImportLoading" class="ai-loading" hidden><div class="spinner"></div><p>AI rozpoznává zápasy ze screenshotu...</p></div>
-        <div id="bulkImportPreview" hidden style="margin-top: 16px;">
-          <h4>Rozpoznané zápasy (<span id="bulkImportCount">0</span>):</h4>
-          <div id="bulkImportMatchesList" class="import-matches-list" style="max-height: 200px; overflow-y: auto;"></div>
-        </div>
+      <div data-pane="screenshot">
+        <div class="upload-zone" id="uploadZoneBulkMatches"></div>
+        <div class="ai-loading" id="bulkImportLoading" hidden><div class="spinner"></div><p>AI rozpoznává zápasy…</p></div>
+        <div id="bulkImportPreview" hidden><h4>Rozpoznané zápasy (<span id="bulkImportCount">0</span>):</h4><div id="bulkImportMatchesList" class="import-matches-list"></div></div>
       </div>
-
-      <button class="btn btn-primary btn-full btn-lg" id="btnImportBulkMatches" style="margin-top: 16px;">🚀 Importovat zápasy</button>
+      <button class="btn btn-primary btn-full btn-lg" id="btnImportBulkMatches">🚀 Importovat zápasy</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Set Result -->
+<!-- MODAL: Výsledek -->
 <div class="modal-overlay" id="modalSetResult">
   <div class="modal">
-    <div class="modal-header"><h3>Zadat výsledek</h3><button class="btn-close" data-close="modalSetResult">&times;</button></div>
+    <div class="modal-header"><h3>Zadat výsledek</h3><button class="btn-close" data-close>&times;</button></div>
     <div class="modal-body">
       <p class="result-match-name" id="resultMatchName"></p>
-      <div class="form-row score-input">
-        <input type="number" id="inputHomeScore" min="0" placeholder="0">
+      <div class="score-input">
+        <input type="number" inputmode="numeric" id="inputHomeScore" min="0" placeholder="0" aria-label="Góly domácích">
         <span class="score-colon">:</span>
-        <input type="number" id="inputAwayScore" min="0" placeholder="0">
+        <input type="number" inputmode="numeric" id="inputAwayScore" min="0" placeholder="0" aria-label="Góly hostů">
       </div>
-      <div class="form-group" style="margin-top: 16px; display: flex; align-items: center; gap: 8px; justify-content: center;">
-        <input type="checkbox" id="inputResultOvertime" style="width: auto; cursor: pointer; transform: scale(1.2);">
-        <label for="inputResultOvertime" style="margin: 0; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--text-primary);">V prodloužení / na nájezdy</label>
-      </div>
+      <label class="check"><input type="checkbox" id="inputResultOvertime"> V prodloužení / na nájezdy</label>
       <button class="btn btn-primary btn-full" id="btnSaveResult">Uložit výsledek</button>
+      <button class="btn btn-outline btn-full btn-danger-outline" id="btnClearResult">Smazat výsledek</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Upload Tips -->
+<!-- MODAL: Nahrát tipy -->
 <div class="modal-overlay" id="modalUploadTips">
   <div class="modal modal-lg">
-    <div class="modal-header"><h3>📥 Nahrát tipy hráčů / hráček</h3><button class="btn-close" data-close="modalUploadTips">&times;</button></div>
-    <div class="modal-body">
-      <div class="form-group"><label>Čí tipy to jsou?</label><select id="selectTipPlayer"></select></div>
-      <div class="form-group" style="margin-top: 12px;">
-        <label>Tipovací den (datum zápasů)</label>
-        <select id="selectTipDate">
-          <option value="auto">🤖 Automatické rozpoznání dne</option>
-        </select>
+    <div class="modal-header"><h3>📥 Nahrát tipy</h3><button class="btn-close" data-close>&times;</button></div>
+    <div class="modal-body" data-tabgroup id="tipsTabs">
+      <div class="form-row">
+        <div class="form-group"><label for="selectTipPlayer">Čí tipy to jsou?</label><select id="selectTipPlayer"></select></div>
+        <div class="form-group"><label for="selectTipDate">Tipovací den</label><select id="selectTipDate"></select></div>
       </div>
-      
       <div class="import-tabs">
-        <button type="button" class="import-tab active" id="tabTipsScreenshot" data-method="screenshot">📸 Screenshot</button>
-        <button type="button" class="import-tab" id="tabTipsText" data-method="text">✍️ Text / Zpráva</button>
+        <button class="import-tab" data-tab="screenshot">📸 Screenshot</button>
+        <button class="import-tab" data-tab="text">✍️ Text / zpráva</button>
       </div>
-
-      <!-- Panel: Screenshot -->
-      <div id="panelTipsScreenshot">
-        <div class="upload-zone" id="uploadZone">
-          <input type="file" id="inputScreenshot" accept="image/*" hidden>
-          <div class="upload-placeholder" id="uploadPlaceholder">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p>Klikněte nebo přetáhněte screenshot</p>
-          </div>
-          <img id="uploadPreview" class="upload-preview" hidden>
-        </div>
-      </div>
-
-      <!-- Panel: Text -->
-      <div id="panelTipsText" hidden>
-        <div class="form-group">
-          <label>Vložte zkopírované tipy</label>
-          <textarea id="inputTipsPaste" rows="6" placeholder="Kuba:&#10;Finsko - Německo 3:1&#10;Kanada - Švédsko 5:3" style="width:100%; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-xs); padding:10px; color:#fff; font-family:var(--font); resize:vertical;"></textarea>
-        </div>
-      </div>
-
-      <button class="btn btn-primary btn-full" id="btnAnalyze" style="margin-top: 12px;" disabled>🤖 Analyzovat tipy</button>
+      <div data-pane="screenshot"><div class="upload-zone" id="uploadZoneTips"></div></div>
+      <div data-pane="text" class="form-group"><textarea id="inputTipsPaste" rows="6" placeholder="Finsko - Německo 3:1&#10;Kanada - Švédsko 5:3&#10;…nebo jen 3:1, 5:3, 2:2p"></textarea></div>
+      <button class="btn btn-primary btn-full" id="btnAnalyze">🤖 Analyzovat tipy</button>
+      <div class="ai-loading" id="aiLoading" hidden><div class="spinner"></div><p>AI analyzuje data…</p></div>
       <div id="aiResult" hidden>
-        <h4 style="margin-top: 16px;">Rozpoznané tipy:</h4>
+        <h4 class="mt">Rozpoznané tipy (můžete upravit):</h4>
         <div id="aiTipsPreview"></div>
         <button class="btn btn-success btn-full" id="btnSaveTips">✅ Uložit tipy</button>
       </div>
-      <div id="aiLoading" class="ai-loading" hidden><div class="spinner"></div><p>AI analyzuje data...</p></div>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Bulk Results -->
+<!-- MODAL: Hromadné výsledky -->
 <div class="modal-overlay" id="modalBulkResults">
   <div class="modal modal-lg">
-    <div class="modal-header"><h3>📊 Hromadné vložení výsledků</h3><button class="btn-close" data-close="modalBulkResults">&times;</button></div>
-    <div class="modal-body">
-      <!-- Tabs for Screenshot vs Text paste -->
+    <div class="modal-header"><h3>📊 Hromadné vložení výsledků</h3><button class="btn-close" data-close>&times;</button></div>
+    <div class="modal-body" data-tabgroup id="resultsTabs">
       <div class="import-tabs">
-        <button type="button" class="import-tab active" id="tabResultsText" data-method="text">✍️ Textový seznam</button>
-        <button type="button" class="import-tab" id="tabResultsScreenshot" data-method="screenshot">📸 Screenshot</button>
+        <button class="import-tab" data-tab="text">✍️ Textový seznam</button>
+        <button class="import-tab" data-tab="screenshot">📸 Screenshot</button>
       </div>
-
-      <!-- Panel: Text Paste -->
-      <div id="panelResultsText">
-        <div class="form-group">
-          <label>Vložte zkopírované výsledky zápasů</label>
-          <textarea id="inputResultsPaste" rows="8" placeholder="Finsko - Německo 3:1&#10;Kanada - Švédsko 5:3" style="width:100%; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-xs); padding:10px; color:#fff; font-family:var(--font); resize:vertical;"></textarea>
-        </div>
-      </div>
-
-      <!-- Panel: Screenshot -->
-      <div id="panelResultsScreenshot" hidden>
-        <div class="upload-zone" id="uploadZoneResults" style="border: 2px dashed rgba(255,255,255,0.15); border-radius: 8px; padding: 30px; text-align: center; cursor: pointer; transition: border-color 0.2s;">
-          <input type="file" id="inputResultsScreenshot" accept="image/*" hidden>
-          <div class="upload-placeholder" id="uploadPlaceholderResults">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="margin-bottom:10px; color:var(--text-muted);"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            <p style="margin:0; color:var(--text-muted);">Klikněte nebo přetáhněte screenshot s výsledky</p>
-          </div>
-          <img id="uploadPreviewResults" class="upload-preview" style="max-height: 250px; border-radius: 6px;" hidden>
-        </div>
-      </div>
-
-      <button class="btn btn-primary btn-full" id="btnAnalyzeResults" style="margin-top: 12px;">🤖 Analyzovat a uložit výsledky</button>
-      <div id="aiResultsLoading" class="ai-loading" hidden><div class="spinner"></div><p>AI zpracovává výsledky...</p></div>
+      <div data-pane="text" class="form-group"><textarea id="inputResultsPaste" rows="8" placeholder="Finsko - Německo 3:1&#10;Kanada - Švédsko 4:3 pp"></textarea></div>
+      <div data-pane="screenshot"><div class="upload-zone" id="uploadZoneResults"></div></div>
+      <button class="btn btn-primary btn-full" id="btnAnalyzeResults">🤖 Analyzovat a uložit výsledky</button>
+      <div class="ai-loading" id="aiResultsLoading" hidden><div class="spinner"></div><p>AI zpracovává výsledky…</p></div>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Manual Tips -->
+<!-- MODAL: Ruční tip -->
 <div class="modal-overlay" id="modalManualTips">
   <div class="modal">
-    <div class="modal-header"><h3>Zadat tipy ručně</h3><button class="btn-close" data-close="modalManualTips">&times;</button></div>
+    <div class="modal-header"><h3>Zadat tip ručně</h3><button class="btn-close" data-close>&times;</button></div>
     <div class="modal-body">
       <p class="result-match-name" id="manualMatchName"></p>
-      <div class="form-group"><label>Hráč / hráčka</label><select id="selectManualPlayer"></select></div>
+      <div class="form-group"><label for="selectManualPlayer">Hráč / hráčka</label><select id="selectManualPlayer"></select></div>
       <div class="form-group"><label>Tip 1-0-2</label>
-        <div class="tip-buttons" id="tipTypeButtons">
+        <div class="tip-buttons">
           <button class="tip-btn" data-val="1">1 (domácí)</button>
           <button class="tip-btn" data-val="0">0 (remíza)</button>
           <button class="tip-btn" data-val="2">2 (hosté)</button>
         </div>
       </div>
       <div class="form-group"><label>Tip skóre</label>
-        <div class="form-row score-input">
-          <input type="number" id="inputTipHome" min="0" placeholder="0">
+        <div class="score-input">
+          <input type="number" inputmode="numeric" id="inputTipHome" min="0" placeholder="0" aria-label="Tip domácí">
           <span class="score-colon">:</span>
-          <input type="number" id="inputTipAway" min="0" placeholder="0">
+          <input type="number" inputmode="numeric" id="inputTipAway" min="0" placeholder="0" aria-label="Tip hosté">
         </div>
       </div>
-      <div class="form-group" style="margin-top: 16px; display: flex; align-items: center; gap: 8px; justify-content: center;">
-        <input type="checkbox" id="inputTipOvertime" style="width: auto; cursor: pointer; transform: scale(1.2);">
-        <label for="inputTipOvertime" style="margin: 0; cursor: pointer; font-weight: 600; font-size: 14px; color: var(--text-primary);">V prodloužení / na nájezdy</label>
-      </div>
+      <label class="check"><input type="checkbox" id="inputTipOvertime"> V prodloužení / na nájezdy</label>
       <button class="btn btn-primary btn-full" id="btnSaveManualTip">Uložit tip</button>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Settings -->
+<!-- MODAL: Nastavení -->
 <div class="modal-overlay" id="modalSettings">
   <div class="modal modal-lg">
-    <div class="modal-header"><h3>⚙️ Nastavení</h3><button class="btn-close" data-close="modalSettings">&times;</button></div>
+    <div class="modal-header"><h3>⚙️ Nastavení</h3><button class="btn-close" data-close>&times;</button></div>
     <div class="modal-body">
-      <div class="form-group"><label>Gemini API klíč</label><input type="password" id="inputApiKey" placeholder="AIza..."></div>
-      <hr class="divider">
-      <h4>⚙️ Aktivní tipovačka (Nastavení)</h4>
-      <div class="form-group"><label>Název tipovačky</label><input type="text" id="inputActiveTournamentName" placeholder="Změnit název..."></div>
-      <div class="form-group"><label>Hráči / hráčky v této tipovačce (oddělení čárkou)</label><input type="text" id="inputPlayersEdit" placeholder="Kuba, Eliška, ..."></div>
-      <div class="form-group">
-        <label>Ikonka / Obrázek tipovačky</label>
-        <div class="icon-selector" id="editIconSelector" style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; align-items: center;">
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="🏒">🏒</button>
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="⚽">⚽</button>
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="🏆">🏆</button>
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="🔥">🔥</button>
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="🏀">🏀</button>
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="🎾">🎾</button>
-          <button type="button" class="btn-icon-select-edit btn-icon-select" data-icon="🏎️">🏎️</button>
-          <button type="button" class="btn-icon-select" id="btnUploadEditCustomIcon" style="font-size: 14px; width: auto; padding: 0 12px; border-radius: 20px;">🖼️ Obrázek</button>
-          <input type="file" id="inputEditTournamentCustomImage" accept="image/*" style="display: none;">
-          <input type="text" id="inputEditCustomIcon" placeholder="Emoji 🎯" style="width: 80px; padding: 8px 10px; font-size: 14px; text-align: center; border-radius: var(--radius-xs); background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: #fff;">
-        </div>
-        <span id="editCustomImageFileName" style="font-size: 11px; color: var(--text-muted); display: block; margin-top: 4px;"></span>
+      <div id="tournamentSettings">
+        <h4>Aktivní tipovačka</h4>
+        <div class="form-group"><label for="inputActiveTournamentName">Název</label><input type="text" id="inputActiveTournamentName"></div>
+        <div class="form-group"><label for="inputPlayersEdit">Hráči / hráčky (oddělení čárkou)</label><input type="text" id="inputPlayersEdit">
+          <p class="form-hint">Přejmenování na stejné pozici přenese i tipy daného hráče.</p></div>
+        <div class="form-group"><label>Ikonka / obrázek</label><div class="icon-picker" id="editIconPicker"></div></div>
+        <hr class="divider">
       </div>
-      
-      <hr class="divider">
-      <h4>☁️ Cloud synchronizace (Firebase)</h4>
-      <p class="form-hint" style="margin-bottom:12px;">Vložte zkopírovaný konfigurační objekt z konzole Firebase pro propojení s vaším cloudem.</p>
-      <div class="form-group">
-        <label>Firebase Config (JSON)</label>
-        <textarea id="inputFirebaseConfig" rows="4" placeholder='{
-  "apiKey": "AIza...",
-  "authDomain": "...",
-  "projectId": "...",
-  "storageBucket": "...",
-  "appId": "..."
-}'></textarea>
-      </div>
-      <div class="form-group">
-        <label>Administrátorské heslo (volitelné)</label>
-        <p class="form-hint">Zadáním hesla uzamknete možnost zadávat výsledky a zápasy pro ostatní. Vy ho zadáte jednou a zůstanete přihlášený.</p>
-        <input type="password" id="inputAdminPassword" placeholder="Zadejte heslo pro úpravy">
-      </div>
-      <div class="form-group" id="adminLoginWrap" hidden>
-        <label>🔑 Přihlášení správce / správkyně</label>
-        <input type="password" id="inputAdminLogin" placeholder="Zadejte admin heslo pro odemčení úprav" style="border-color:var(--accent);">
-      </div>
-
+      <div class="form-group"><label for="inputApiKey">Gemini API klíč</label><input type="password" id="inputApiKey" placeholder="AIza…" autocomplete="off"></div>
+      <div class="form-group"><label for="inputAdminPassword">Administrátorské heslo (volitelné)</label>
+        <p class="form-hint">Uzamkne zadávání zápasů a výsledků na tomto zařízení.</p>
+        <input type="password" id="inputAdminPassword" autocomplete="new-password"></div>
+      <div class="form-group" id="adminLoginWrap" hidden><label for="inputAdminLogin">🔑 Přihlášení správce</label><input type="password" id="inputAdminLogin" class="accent-border"></div>
+      <details class="advanced">
+        <summary>☁️ Cloud synchronizace (Firebase)</summary>
+        <div class="form-group"><label for="inputFirebaseConfig">Firebase config (JSON)</label><textarea id="inputFirebaseConfig" rows="5"></textarea></div>
+      </details>
       <button class="btn btn-primary btn-full" id="btnSaveSettings">Uložit nastavení</button>
-      <hr class="divider">
-      <h4>Aktualizace aplikace</h4>
-      <p class="form-hint" style="margin-bottom: 8px;">Pokud se vám nezobrazují nejnovější opravy barev, vymažte mezipaměť aplikace tímto tlačítkem. Vaše data zůstanou v naprostém bezpečí.</p>
-      <button class="btn btn-primary btn-full" id="btnForceUpdate" style="background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3); margin-bottom: 12px; margin-top: 4px;">🔄 Vynutit aktualizaci aplikace</button>
+
       <hr class="divider">
       <h4>📥 Import z Excelu přes AI</h4>
-      <p class="form-hint" style="margin-bottom: 8px;">Označte a zkopírujte celou tabulku z Vašeho starého Excelu (Ctrl+C) a vložte ji sem. AI z ní sama kompletně vytvoří novou tipovačku s celou historií.</p>
-      <div class="form-group">
-        <textarea id="inputExcelPaste" rows="5" placeholder="Sem vložte buňky zkopírované ze starého Excelu..." style="width:100%; background:var(--bg-input); border:1px solid var(--border); border-radius:var(--radius-xs); padding:10px; color:#fff; font-family:var(--font); resize:vertical;"></textarea>
-      </div>
-      <button class="btn btn-primary btn-full" id="btnImportExcel" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3); margin-bottom: 12px; margin-top: 4px;">🤖 Importovat z Excelu přes AI</button>
-      <div id="aiExcelLoading" class="ai-loading" hidden><div class="spinner"></div><p>AI analyzuje Excel tabulku a vytváří tipovačku...</p></div>
-      
+      <p class="form-hint">Zkopírujte celou tabulku ze starého Excelu (Ctrl+C) a vložte ji sem. AI z ní vytvoří tipovačku i s historií.</p>
+      <textarea id="inputExcelPaste" rows="4" placeholder="Sem vložte buňky z Excelu…"></textarea>
+      <button class="btn btn-full btn-green" id="btnImportExcel">🤖 Importovat z Excelu přes AI</button>
+      <div class="ai-loading" id="aiExcelLoading" hidden><div class="spinner"></div><p>AI analyzuje tabulku…</p></div>
+
       <hr class="divider">
-      <h4>Aktuální tipovačka</h4>
-      <button class="btn btn-outline btn-full" id="btnExport">📥 Exportovat zálohu (JSON)</button>
-      <button class="btn btn-outline btn-full" id="btnImport">📤 Importovat zálohu</button>
-      <input type="file" id="inputImport" accept=".json" hidden>
-      <button class="btn btn-outline btn-full" id="btnDeleteTournament" style="color:var(--danger);border-color:rgba(239,68,68,0.3)">🗑️ Smazat tuto tipovačku</button>
+      <h4>Záloha a údržba</h4>
+      <div class="btn-grid">
+        <button class="btn btn-outline" id="btnExport">📥 Exportovat zálohu</button>
+        <button class="btn btn-outline" id="btnImport">📤 Importovat zálohu</button>
+        <button class="btn btn-outline" id="btnForceUpdate">🔄 Vynutit aktualizaci</button>
+        <button class="btn btn-outline btn-danger-outline" id="btnDeleteTournament">🗑️ Smazat tipovačku</button>
+      </div>
+      <input type="file" id="inputImport" accept=".json,application/json" hidden>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Player Profile & Trophies -->
+<!-- MODAL: Profil hráče -->
 <div class="modal-overlay" id="modalPlayerProfile">
-  <div class="modal">
-    <div class="modal-header">
-      <h3 id="profileTitle">👑 Profil hráče / hráčky</h3>
-      <button class="btn-close" data-close="modalPlayerProfile">&times;</button>
-    </div>
-    <div class="modal-body" style="padding: 20px; text-align: center;">
-      <div id="profileAvatar" style="font-size: 48px; margin-bottom: 8px; filter: drop-shadow(0 0 10px rgba(99,102,241,0.4));">🏒</div>
-      <h2 id="profilePlayerName" style="font-size: 22px; font-weight: 800; color: #fff; margin-bottom: 4px;"></h2>
-      <p id="profileGlobalStats" style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;"></p>
-      
-      <hr class="divider" style="margin: 12px 0;">
-      
-      <h4 style="text-align: left; margin-bottom: 10px; font-size: 14px; font-weight: 700; color: var(--accent-hover);">🏆 Získané odznaky</h4>
-      <div id="profileBadgesList" style="display: flex; flex-direction: column; gap: 8px; text-align: left; margin-bottom: 16px;"></div>
-      
-      <hr class="divider" style="margin: 12px 0;">
-      
-      <h4 style="text-align: left; margin-bottom: 10px; font-size: 14px; font-weight: 700; color: var(--accent-hover);">📊 Statistiky tipování</h4>
-      <div id="profileDetailedStats" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <div style="background: var(--bg-input); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
-          <div style="font-size: 11px; color: var(--text-muted);">Trefená skóre</div>
-          <div id="statExactScores" style="font-size: 18px; font-weight: 800; color: #fff; margin-top: 2px;">0</div>
-        </div>
-        <div style="background: var(--bg-input); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
-          <div style="font-size: 11px; color: var(--text-muted);">Trefené tendence (102)</div>
-          <div id="statOutcomes" style="font-size: 18px; font-weight: 800; color: #fff; margin-top: 2px;">0</div>
-        </div>
-        <div style="background: var(--bg-input); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
-          <div style="font-size: 11px; color: var(--text-muted);">Celková úspěšnost</div>
-          <div id="statAccuracy" style="font-size: 18px; font-weight: 800; color: #fff; margin-top: 2px;">0 %</div>
-        </div>
-        <div style="background: var(--bg-input); padding: 10px; border-radius: 8px; border: 1px solid var(--border);">
-          <div style="font-size: 11px; color: var(--text-muted);">Průměr bodů / zápas</div>
-          <div id="statAvgPoints" style="font-size: 18px; font-weight: 800; color: #fff; margin-top: 2px;">0.00</div>
-        </div>
+  <div class="modal" id="profileCard">
+    <div class="modal-header"><h3>👑 Profil hráče / hráčky</h3><button class="btn-close no-capture" data-close>&times;</button></div>
+    <div class="modal-body center">
+      <div class="profile-avatar">🏒</div>
+      <h2 id="profilePlayerName" class="profile-name"></h2>
+      <p id="profileGlobalStats" class="profile-sub"></p>
+      <div class="stat-grid">
+        <div class="stat"><span>Trefená skóre</span><b id="statExactScores">0</b></div>
+        <div class="stat"><span>Trefené tendence (102)</span><b id="statOutcomes">0</b></div>
+        <div class="stat"><span>Celková úspěšnost</span><b id="statAccuracy">0 %</b></div>
+        <div class="stat"><span>Průměr bodů / zápas</span><b id="statAvgPoints">0.00</b></div>
       </div>
-      
-      <div class="share-actions" style="display: flex; flex-direction: column; gap: 8px; margin-top: 20px;">
-        <button class="btn btn-primary btn-full" id="btnShareProfileImage" style="margin: 0;">📤 Sdílet profil jako obrázek</button>
-        <button class="btn btn-outline btn-full" id="btnDownloadProfileImage" style="margin: 0; border-color: rgba(99, 102, 241, 0.4); color: var(--accent-hover);">📥 Stáhnout profil jako obrázek</button>
+      <h4 class="section-title">🏆 Získané odznaky</h4>
+      <div id="profileBadgesList" class="badge-list"></div>
+      <div class="share-actions no-capture">
+        <button class="btn btn-primary" id="btnShareProfileImage">📤 Sdílet profil</button>
+        <button class="btn btn-outline" id="btnDownloadProfileImage">📥 Stáhnout obrázek</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MODAL: Share Daily Tips -->
+<!-- MODAL: Sdílení -->
 <div class="modal-overlay" id="modalShareTips">
   <div class="modal modal-lg">
-    <div class="modal-header"><h3>📤 Sdílet přehled</h3><button class="btn-close" data-close="modalShareTips">&times;</button></div>
-    <div class="modal-body">
+    <div class="modal-header"><h3>📤 Sdílet přehled</h3><button class="btn-close" data-close>&times;</button></div>
+    <div class="modal-body" data-tabgroup id="shareTabs">
       <div class="import-tabs">
-        <button type="button" class="import-tab active" id="tabShareTips" data-share-type="tips">📊 Přehled tipů</button>
-        <button type="button" class="import-tab" id="tabShareMatches" data-share-type="matches">📋 Seznam zápasů</button>
-        <button type="button" class="import-tab" id="tabShareMatchesRankings" data-share-type="matches_rankings">🏆 Program + Žebříček</button>
+        <button class="import-tab" data-tab="tips">📊 Tipy</button>
+        <button class="import-tab" data-tab="matches">📋 Program</button>
+        <button class="import-tab" data-tab="matches_rankings">🏆 Program + žebříček</button>
       </div>
-      <div class="form-group">
-        <label>Vyberte den</label>
-        <select id="selectShareDate"></select>
-      </div>
-      <div id="shareTipsPreviewWrap" class="share-preview-wrap">
-        <div id="shareTipsPreview"></div>
-      </div>
-      <div class="share-actions" style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
-        <button class="btn btn-primary btn-full" id="btnShareImageOnly" style="margin: 0;">📤 Sdílet obrázek</button>
-        <button class="btn btn-outline btn-full" id="btnDownloadImageOnly" style="margin: 0; border-color: rgba(99, 102, 241, 0.4); color: var(--accent-hover);">📥 Stáhnout obrázek</button>
-        <button class="btn btn-outline btn-full" id="btnCopyText" style="margin: 0; border-color: rgba(255,255,255,0.15);">📋 Kopírovat jako text</button>
+      <div class="form-group"><label for="selectShareDate">Den</label><select id="selectShareDate"></select></div>
+      <div class="share-preview-wrap"><div id="shareTipsPreview"></div></div>
+      <div class="share-actions">
+        <button class="btn btn-primary" id="btnShareImageOnly">📤 Sdílet obrázek</button>
+        <button class="btn btn-outline" id="btnDownloadImageOnly">📥 Stáhnout obrázek</button>
+        <button class="btn btn-outline" id="btnCopyText">📋 Kopírovat jako text</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Hidden render container for high-quality image export -->
-<div id="renderContainer" style="position:fixed;left:-9999px;top:0;z-index:-1;"></div>
+<!-- Skrytý kontejner pro export obrázku -->
+<div id="renderContainer" aria-hidden="true"></div>
 
-<!-- Firebase Compat SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-<script src="app.js"></script>
+<template id="tplUploadZone">
+  <input type="file" accept="image/*" hidden>
+  <div class="upload-placeholder">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+    <p>Klikněte, přetáhněte nebo vložte (Ctrl+V) screenshot</p>
+  </div>
+  <img class="upload-preview" alt="" hidden>
+</template>
+
+<template id="tplIconPicker">
+  <div class="icon-row">
+    <button type="button" class="btn-icon-select" data-icon="🏒">🏒</button>
+    <button type="button" class="btn-icon-select" data-icon="⚽">⚽</button>
+    <button type="button" class="btn-icon-select" data-icon="🏆">🏆</button>
+    <button type="button" class="btn-icon-select" data-icon="🔥">🔥</button>
+    <button type="button" class="btn-icon-select" data-icon="🏀">🏀</button>
+    <button type="button" class="btn-icon-select" data-icon="🎾">🎾</button>
+    <button type="button" class="btn-icon-select" data-icon="🏎️">🏎️</button>
+    <button type="button" class="btn-icon-select icon-upload">🖼️ Obrázek</button>
+    <input type="file" accept="image/*" hidden>
+    <input type="text" class="icon-custom" placeholder="Emoji 🎯" maxlength="8">
+  </div>
+  <span class="icon-note"></span>
+</template>
 </body>
 </html>
