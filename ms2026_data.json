@@ -1,0 +1,2141 @@
+{
+    "id":  "ms2026",
+    "name":  "MS 2026",
+    "players":  [
+                    "Kuba",
+                    "Eliška",
+                    "Dan",
+                    "Tade",
+                    "Maruš",
+                    "Pavel",
+                    "Rey"
+                ],
+    "matches":  [
+                    {
+                        "id":  "m1",
+                        "homeTeam":  "Finsko",
+                        "awayTeam":  "Německo",
+                        "date":  "2026-05-15",
+                        "time":  "16:20",
+                        "result":  "3:1",
+                        "resultType":  1,
+                        "order":  1
+                    },
+                    {
+                        "id":  "m2",
+                        "homeTeam":  "Kanada",
+                        "awayTeam":  "Švédsko",
+                        "date":  "2026-05-15",
+                        "time":  "16:20",
+                        "result":  "5:3",
+                        "resultType":  1,
+                        "order":  2
+                    },
+                    {
+                        "id":  "m3",
+                        "homeTeam":  "USA",
+                        "awayTeam":  "Švýcarsko",
+                        "date":  "2026-05-15",
+                        "time":  "20:20",
+                        "result":  "1:3",
+                        "resultType":  2,
+                        "order":  3
+                    },
+                    {
+                        "id":  "m4",
+                        "homeTeam":  "ČESKO",
+                        "awayTeam":  "Dánsko",
+                        "date":  "2026-05-15",
+                        "time":  "20:20",
+                        "result":  "4:1",
+                        "resultType":  1,
+                        "order":  4
+                    },
+                    {
+                        "id":  "m5",
+                        "homeTeam":  "Velká Británie",
+                        "awayTeam":  "Rakousko",
+                        "date":  "2026-05-16",
+                        "time":  "12:20",
+                        "result":  "2:5",
+                        "resultType":  2,
+                        "order":  5
+                    },
+                    {
+                        "id":  "m6",
+                        "homeTeam":  "Slovensko",
+                        "awayTeam":  "Norsko",
+                        "date":  "2026-05-16",
+                        "time":  "12:20",
+                        "result":  "2:1",
+                        "resultType":  1,
+                        "order":  6
+                    },
+                    {
+                        "id":  "m7",
+                        "homeTeam":  "Maďarsko",
+                        "awayTeam":  "Finsko",
+                        "date":  "2026-05-16",
+                        "time":  "16:20",
+                        "result":  "1:4",
+                        "resultType":  2,
+                        "order":  7
+                    },
+                    {
+                        "id":  "m8",
+                        "homeTeam":  "Itálie",
+                        "awayTeam":  "Kanada",
+                        "date":  "2026-05-16",
+                        "time":  "16:20",
+                        "result":  "0:6",
+                        "resultType":  2,
+                        "order":  8
+                    },
+                    {
+                        "id":  "m9",
+                        "homeTeam":  "Švýcarsko",
+                        "awayTeam":  "Lotyšsko",
+                        "date":  "2026-05-16",
+                        "time":  "20:20",
+                        "result":  "4:2",
+                        "resultType":  1,
+                        "order":  9
+                    },
+                    {
+                        "id":  "m10",
+                        "homeTeam":  "Slovinsko",
+                        "awayTeam":  "ČESKO",
+                        "date":  "2026-05-16",
+                        "time":  "20:20",
+                        "result":  "3:2p",
+                        "resultType":  0,
+                        "order":  10
+                    },
+                    {
+                        "id":  "m11",
+                        "homeTeam":  "Velká Británie",
+                        "awayTeam":  "USA",
+                        "date":  "2026-05-17",
+                        "time":  "12:20",
+                        "result":  "1:5",
+                        "resultType":  2,
+                        "order":  11
+                    },
+                    {
+                        "id":  "m12",
+                        "homeTeam":  "Itálie",
+                        "awayTeam":  "Slovensko",
+                        "date":  "2026-05-17",
+                        "time":  "12:20",
+                        "result":  "1:4",
+                        "resultType":  2,
+                        "order":  12
+                    },
+                    {
+                        "id":  "m13",
+                        "homeTeam":  "Rakousko",
+                        "awayTeam":  "Maďarsko",
+                        "date":  "2026-05-17",
+                        "time":  "16:20",
+                        "result":  "4:2",
+                        "resultType":  1,
+                        "order":  13
+                    },
+                    {
+                        "id":  "m14",
+                        "homeTeam":  "Dánsko",
+                        "awayTeam":  "Švédsko",
+                        "date":  "2026-05-17",
+                        "time":  "16:20",
+                        "result":  "2:6",
+                        "resultType":  2,
+                        "order":  14
+                    },
+                    {
+                        "id":  "m15",
+                        "homeTeam":  "Německo",
+                        "awayTeam":  "Lotyšsko",
+                        "date":  "2026-05-17",
+                        "time":  "20:20",
+                        "result":  "0:2",
+                        "resultType":  2,
+                        "order":  15
+                    },
+                    {
+                        "id":  "m16",
+                        "homeTeam":  "Norsko",
+                        "awayTeam":  "Slovinsko",
+                        "date":  "2026-05-17",
+                        "time":  "20:20",
+                        "result":  "4:0",
+                        "resultType":  1,
+                        "order":  16
+                    },
+                    {
+                        "id":  "m17",
+                        "homeTeam":  "Finsko",
+                        "awayTeam":  "USA",
+                        "date":  "2026-05-18",
+                        "time":  "16:20",
+                        "result":  "2:6",
+                        "resultType":  2,
+                        "order":  17
+                    },
+                    {
+                        "id":  "m18",
+                        "homeTeam":  "Kanada",
+                        "awayTeam":  "Dánsko",
+                        "date":  "2026-05-18",
+                        "time":  "16:20",
+                        "result":  "5:1",
+                        "resultType":  1,
+                        "order":  18
+                    },
+                    {
+                        "id":  "m19",
+                        "homeTeam":  "Německo",
+                        "awayTeam":  "Švýcarsko",
+                        "date":  "2026-05-18",
+                        "time":  "20:20",
+                        "result":  "1:6",
+                        "resultType":  2,
+                        "order":  19
+                    },
+                    {
+                        "id":  "m20",
+                        "homeTeam":  "Švédsko",
+                        "awayTeam":  "ČESKO",
+                        "date":  "2026-05-18",
+                        "time":  "20:20",
+                        "result":  "3:4",
+                        "resultType":  2,
+                        "order":  20
+                    },
+                    {
+                        "id":  "m21",
+                        "homeTeam":  "Lotyšsko",
+                        "awayTeam":  "Rakousko",
+                        "date":  "2026-05-19",
+                        "time":  "16:20",
+                        "result":  "1:3",
+                        "resultType":  2,
+                        "order":  21
+                    },
+                    {
+                        "id":  "m22",
+                        "homeTeam":  "Itálie",
+                        "awayTeam":  "Norsko",
+                        "date":  "2026-05-19",
+                        "time":  "16:20",
+                        "result":  "0:4",
+                        "resultType":  2,
+                        "order":  22
+                    },
+                    {
+                        "id":  "m23",
+                        "homeTeam":  "Maďarsko",
+                        "awayTeam":  "Velká Británie",
+                        "date":  "2026-05-19",
+                        "time":  "20:20",
+                        "result":  "5:0",
+                        "resultType":  1,
+                        "order":  23
+                    },
+                    {
+                        "id":  "m24",
+                        "homeTeam":  "Slovinsko",
+                        "awayTeam":  "Slovensko",
+                        "date":  "2026-05-19",
+                        "time":  "20:20",
+                        "result":  "4:5",
+                        "resultType":  2,
+                        "order":  24
+                    },
+                    {
+                        "id":  "m25",
+                        "homeTeam":  "Rakousko",
+                        "awayTeam":  "Švýcarsko",
+                        "date":  "2026-05-20",
+                        "time":  "16:20",
+                        "result":  "0:9",
+                        "resultType":  2,
+                        "order":  25
+                    },
+                    {
+                        "id":  "m26",
+                        "homeTeam":  "ČESKO",
+                        "awayTeam":  "Itálie",
+                        "date":  "2026-05-20",
+                        "time":  "16:20",
+                        "result":  "3:1",
+                        "resultType":  1,
+                        "order":  26
+                    },
+                    {
+                        "id":  "m27",
+                        "homeTeam":  "USA",
+                        "awayTeam":  "Německo",
+                        "date":  "2026-05-20",
+                        "time":  "20:20",
+                        "result":  "4:3p",
+                        "resultType":  0,
+                        "order":  27
+                    },
+                    {
+                        "id":  "m28",
+                        "homeTeam":  "Švédsko",
+                        "awayTeam":  "Slovinsko",
+                        "date":  "2026-05-20",
+                        "time":  "20:20",
+                        "result":  "6:0",
+                        "resultType":  1,
+                        "order":  28
+                    },
+                    {
+                        "id":  "m29",
+                        "homeTeam":  "Lotyšsko",
+                        "awayTeam":  "Finsko",
+                        "date":  "2026-05-21",
+                        "time":  "16:20",
+                        "result":  "1:7",
+                        "resultType":  2,
+                        "order":  29
+                    },
+                    {
+                        "id":  "m30",
+                        "homeTeam":  "Kanada",
+                        "awayTeam":  "Norsko",
+                        "date":  "2026-05-21",
+                        "time":  "16:20",
+                        "result":  "6:5p",
+                        "resultType":  0,
+                        "order":  30
+                    },
+                    {
+                        "id":  "m31",
+                        "homeTeam":  "Švýcarsko",
+                        "awayTeam":  "Velká Británie",
+                        "date":  "2026-05-21",
+                        "time":  "20:20",
+                        "result":  "4:1",
+                        "resultType":  1,
+                        "order":  31
+                    },
+                    {
+                        "id":  "m32",
+                        "homeTeam":  "Dánsko",
+                        "awayTeam":  "Slovensko",
+                        "date":  "2026-05-21",
+                        "time":  "20:20",
+                        "result":  "1:5",
+                        "resultType":  2,
+                        "order":  32
+                    },
+                    {
+                        "id":  "m33",
+                        "homeTeam":  "Německo",
+                        "awayTeam":  "Maďarsko",
+                        "date":  "2026-05-22",
+                        "time":  "16:20",
+                        "result":  null,
+                        "resultType":  null,
+                        "order":  33
+                    },
+                    {
+                        "id":  "m34",
+                        "homeTeam":  "Kanada",
+                        "awayTeam":  "Slovinsko",
+                        "date":  "2026-05-22",
+                        "time":  "16:20",
+                        "result":  null,
+                        "resultType":  null,
+                        "order":  34
+                    },
+                    {
+                        "id":  "m35",
+                        "homeTeam":  "Finsko",
+                        "awayTeam":  "Velká Británie",
+                        "date":  "2026-05-22",
+                        "time":  "20:20",
+                        "result":  null,
+                        "resultType":  null,
+                        "order":  35
+                    },
+                    {
+                        "id":  "m36",
+                        "homeTeam":  "Švédsko",
+                        "awayTeam":  "Itálie",
+                        "date":  "2026-05-22",
+                        "time":  "20:20",
+                        "result":  null,
+                        "resultType":  null,
+                        "order":  36
+                    }
+                ],
+    "tips":  [
+                 {
+                     "id":  "t_m1_0",
+                     "matchId":  "m1",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m1_1",
+                     "matchId":  "m1",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m1_2",
+                     "matchId":  "m1",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:3"
+                 },
+                 {
+                     "id":  "t_m1_3",
+                     "matchId":  "m1",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m1_4",
+                     "matchId":  "m1",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m1_5",
+                     "matchId":  "m1",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m1_6",
+                     "matchId":  "m1",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "3:0"
+                 },
+                 {
+                     "id":  "t_m2_0",
+                     "matchId":  "m2",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m2_1",
+                     "matchId":  "m2",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m2_2",
+                     "matchId":  "m2",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "4:3"
+                 },
+                 {
+                     "id":  "t_m2_3",
+                     "matchId":  "m2",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m2_4",
+                     "matchId":  "m2",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m2_5",
+                     "matchId":  "m2",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m2_6",
+                     "matchId":  "m2",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m3_0",
+                     "matchId":  "m3",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m3_1",
+                     "matchId":  "m3",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m3_2",
+                     "matchId":  "m3",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m3_3",
+                     "matchId":  "m3",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m3_4",
+                     "matchId":  "m3",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "1:2"
+                 },
+                 {
+                     "id":  "t_m3_5",
+                     "matchId":  "m3",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:5"
+                 },
+                 {
+                     "id":  "t_m3_6",
+                     "matchId":  "m3",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "4:3"
+                 },
+                 {
+                     "id":  "t_m4_0",
+                     "matchId":  "m4",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "2:1"
+                 },
+                 {
+                     "id":  "t_m4_1",
+                     "matchId":  "m4",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "2:0"
+                 },
+                 {
+                     "id":  "t_m4_2",
+                     "matchId":  "m4",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m4_3",
+                     "matchId":  "m4",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m4_4",
+                     "matchId":  "m4",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m4_5",
+                     "matchId":  "m4",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "2:1"
+                 },
+                 {
+                     "id":  "t_m4_6",
+                     "matchId":  "m4",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m5_0",
+                     "matchId":  "m5",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m5_1",
+                     "matchId":  "m5",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m5_2",
+                     "matchId":  "m5",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m5_3",
+                     "matchId":  "m5",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m5_4",
+                     "matchId":  "m5",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m5_5",
+                     "matchId":  "m5",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m5_6",
+                     "matchId":  "m5",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m6_0",
+                     "matchId":  "m6",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m6_1",
+                     "matchId":  "m6",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "3:0"
+                 },
+                 {
+                     "id":  "t_m6_2",
+                     "matchId":  "m6",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m6_3",
+                     "matchId":  "m6",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m6_4",
+                     "matchId":  "m6",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m6_5",
+                     "matchId":  "m6",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m6_6",
+                     "matchId":  "m6",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m7_0",
+                     "matchId":  "m7",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "0:6"
+                 },
+                 {
+                     "id":  "t_m7_1",
+                     "matchId":  "m7",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m7_2",
+                     "matchId":  "m7",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m7_3",
+                     "matchId":  "m7",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m7_4",
+                     "matchId":  "m7",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m7_5",
+                     "matchId":  "m7",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m7_6",
+                     "matchId":  "m7",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "0:4"
+                 },
+                 {
+                     "id":  "t_m8_0",
+                     "matchId":  "m8",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m8_1",
+                     "matchId":  "m8",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "0:6"
+                 },
+                 {
+                     "id":  "t_m8_2",
+                     "matchId":  "m8",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m8_3",
+                     "matchId":  "m8",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:8"
+                 },
+                 {
+                     "id":  "t_m8_4",
+                     "matchId":  "m8",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "0:6"
+                 },
+                 {
+                     "id":  "t_m8_5",
+                     "matchId":  "m8",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m8_6",
+                     "matchId":  "m8",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m9_0",
+                     "matchId":  "m9",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m9_1",
+                     "matchId":  "m9",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m9_2",
+                     "matchId":  "m9",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:3"
+                 },
+                 {
+                     "id":  "t_m9_3",
+                     "matchId":  "m9",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m9_4",
+                     "matchId":  "m9",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m9_5",
+                     "matchId":  "m9",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "4:0"
+                 },
+                 {
+                     "id":  "t_m9_6",
+                     "matchId":  "m9",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m10_0",
+                     "matchId":  "m10",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m10_1",
+                     "matchId":  "m10",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m10_2",
+                     "matchId":  "m10",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m10_3",
+                     "matchId":  "m10",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m10_4",
+                     "matchId":  "m10",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m10_5",
+                     "matchId":  "m10",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m10_6",
+                     "matchId":  "m10",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m11_0",
+                     "matchId":  "m11",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m11_1",
+                     "matchId":  "m11",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m11_2",
+                     "matchId":  "m11",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m11_3",
+                     "matchId":  "m11",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m11_4",
+                     "matchId":  "m11",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "0:6"
+                 },
+                 {
+                     "id":  "t_m11_5",
+                     "matchId":  "m11",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m11_6",
+                     "matchId":  "m11",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m12_0",
+                     "matchId":  "m12",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m12_1",
+                     "matchId":  "m12",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m12_2",
+                     "matchId":  "m12",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m12_3",
+                     "matchId":  "m12",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m12_4",
+                     "matchId":  "m12",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m12_5",
+                     "matchId":  "m12",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m12_6",
+                     "matchId":  "m12",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m13_0",
+                     "matchId":  "m13",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "2:1"
+                 },
+                 {
+                     "id":  "t_m13_1",
+                     "matchId":  "m13",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:0"
+                 },
+                 {
+                     "id":  "t_m13_2",
+                     "matchId":  "m13",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m13_3",
+                     "matchId":  "m13",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "4:3"
+                 },
+                 {
+                     "id":  "t_m13_4",
+                     "matchId":  "m13",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m13_5",
+                     "matchId":  "m13",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "2:0"
+                 },
+                 {
+                     "id":  "t_m13_6",
+                     "matchId":  "m13",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m14_0",
+                     "matchId":  "m14",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m14_1",
+                     "matchId":  "m14",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m14_2",
+                     "matchId":  "m14",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m14_3",
+                     "matchId":  "m14",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m14_4",
+                     "matchId":  "m14",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m14_5",
+                     "matchId":  "m14",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "0:4"
+                 },
+                 {
+                     "id":  "t_m14_6",
+                     "matchId":  "m14",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m15_0",
+                     "matchId":  "m15",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m15_1",
+                     "matchId":  "m15",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m15_2",
+                     "matchId":  "m15",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "4:3"
+                 },
+                 {
+                     "id":  "t_m15_3",
+                     "matchId":  "m15",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m15_4",
+                     "matchId":  "m15",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m15_5",
+                     "matchId":  "m15",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m15_6",
+                     "matchId":  "m15",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m16_0",
+                     "matchId":  "m16",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m16_1",
+                     "matchId":  "m16",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m16_2",
+                     "matchId":  "m16",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m16_3",
+                     "matchId":  "m16",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m16_4",
+                     "matchId":  "m16",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m16_5",
+                     "matchId":  "m16",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:2"
+                 },
+                 {
+                     "id":  "t_m16_6",
+                     "matchId":  "m16",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m17_0",
+                     "matchId":  "m17",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m17_1",
+                     "matchId":  "m17",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m17_2",
+                     "matchId":  "m17",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m17_3",
+                     "matchId":  "m17",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m17_4",
+                     "matchId":  "m17",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m17_5",
+                     "matchId":  "m17",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m17_6",
+                     "matchId":  "m17",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m18_0",
+                     "matchId":  "m18",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m18_1",
+                     "matchId":  "m18",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "6:1"
+                 },
+                 {
+                     "id":  "t_m18_2",
+                     "matchId":  "m18",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m18_3",
+                     "matchId":  "m18",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "6:1"
+                 },
+                 {
+                     "id":  "t_m18_4",
+                     "matchId":  "m18",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m18_5",
+                     "matchId":  "m18",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m18_6",
+                     "matchId":  "m18",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m19_0",
+                     "matchId":  "m19",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "2:5"
+                 },
+                 {
+                     "id":  "t_m19_1",
+                     "matchId":  "m19",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m19_2",
+                     "matchId":  "m19",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m19_3",
+                     "matchId":  "m19",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m19_4",
+                     "matchId":  "m19",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m19_5",
+                     "matchId":  "m19",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m19_6",
+                     "matchId":  "m19",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "0:6"
+                 },
+                 {
+                     "id":  "t_m20_0",
+                     "matchId":  "m20",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "3:4"
+                 },
+                 {
+                     "id":  "t_m20_1",
+                     "matchId":  "m20",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m20_2",
+                     "matchId":  "m20",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m20_3",
+                     "matchId":  "m20",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "2:3p"
+                 },
+                 {
+                     "id":  "t_m20_4",
+                     "matchId":  "m20",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m20_5",
+                     "matchId":  "m20",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m20_6",
+                     "matchId":  "m20",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m21_0",
+                     "matchId":  "m21",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m21_1",
+                     "matchId":  "m21",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:0"
+                 },
+                 {
+                     "id":  "t_m21_2",
+                     "matchId":  "m21",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m21_3",
+                     "matchId":  "m21",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m21_4",
+                     "matchId":  "m21",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m21_5",
+                     "matchId":  "m21",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m21_6",
+                     "matchId":  "m21",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m22_0",
+                     "matchId":  "m22",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m22_1",
+                     "matchId":  "m22",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m22_2",
+                     "matchId":  "m22",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m22_3",
+                     "matchId":  "m22",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m22_4",
+                     "matchId":  "m22",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m22_5",
+                     "matchId":  "m22",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m22_6",
+                     "matchId":  "m22",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m23_0",
+                     "matchId":  "m23",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m23_1",
+                     "matchId":  "m23",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m23_2",
+                     "matchId":  "m23",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m23_3",
+                     "matchId":  "m23",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m23_4",
+                     "matchId":  "m23",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m23_5",
+                     "matchId":  "m23",
+                     "playerName":  "Pavel",
+                     "tipType":  0,
+                     "tipScore":  "3:2p"
+                 },
+                 {
+                     "id":  "t_m23_6",
+                     "matchId":  "m23",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "2:1"
+                 },
+                 {
+                     "id":  "t_m24_0",
+                     "matchId":  "m24",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m24_1",
+                     "matchId":  "m24",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m24_2",
+                     "matchId":  "m24",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m24_3",
+                     "matchId":  "m24",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m24_4",
+                     "matchId":  "m24",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "2:5"
+                 },
+                 {
+                     "id":  "t_m24_5",
+                     "matchId":  "m24",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m24_6",
+                     "matchId":  "m24",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m25_0",
+                     "matchId":  "m25",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m25_1",
+                     "matchId":  "m25",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "0:3"
+                 },
+                 {
+                     "id":  "t_m25_2",
+                     "matchId":  "m25",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m25_3",
+                     "matchId":  "m25",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m25_4",
+                     "matchId":  "m25",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "0:5"
+                 },
+                 {
+                     "id":  "t_m25_5",
+                     "matchId":  "m25",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m25_6",
+                     "matchId":  "m25",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m26_0",
+                     "matchId":  "m26",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "6:1"
+                 },
+                 {
+                     "id":  "t_m26_1",
+                     "matchId":  "m26",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m26_2",
+                     "matchId":  "m26",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m26_3",
+                     "matchId":  "m26",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m26_4",
+                     "matchId":  "m26",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m26_5",
+                     "matchId":  "m26",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m26_6",
+                     "matchId":  "m26",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m27_0",
+                     "matchId":  "m27",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m27_1",
+                     "matchId":  "m27",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m27_2",
+                     "matchId":  "m27",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m27_3",
+                     "matchId":  "m27",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m27_4",
+                     "matchId":  "m27",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m27_5",
+                     "matchId":  "m27",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "3:2"
+                 },
+                 {
+                     "id":  "t_m27_6",
+                     "matchId":  "m27",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "2:1"
+                 },
+                 {
+                     "id":  "t_m28_0",
+                     "matchId":  "m28",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "4:0"
+                 },
+                 {
+                     "id":  "t_m28_1",
+                     "matchId":  "m28",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m28_2",
+                     "matchId":  "m28",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m28_3",
+                     "matchId":  "m28",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m28_4",
+                     "matchId":  "m28",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m28_5",
+                     "matchId":  "m28",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "6:1"
+                 },
+                 {
+                     "id":  "t_m28_6",
+                     "matchId":  "m28",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m29_0",
+                     "matchId":  "m29",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m29_1",
+                     "matchId":  "m29",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:4"
+                 },
+                 {
+                     "id":  "t_m29_2",
+                     "matchId":  "m29",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "1:5"
+                 },
+                 {
+                     "id":  "t_m29_3",
+                     "matchId":  "m29",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "1:6"
+                 },
+                 {
+                     "id":  "t_m29_4",
+                     "matchId":  "m29",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "2:5"
+                 },
+                 {
+                     "id":  "t_m29_5",
+                     "matchId":  "m29",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:5"
+                 },
+                 {
+                     "id":  "t_m29_6",
+                     "matchId":  "m29",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m30_0",
+                     "matchId":  "m30",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m30_1",
+                     "matchId":  "m30",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m30_2",
+                     "matchId":  "m30",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m30_3",
+                     "matchId":  "m30",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "6:1"
+                 },
+                 {
+                     "id":  "t_m30_4",
+                     "matchId":  "m30",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m30_5",
+                     "matchId":  "m30",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m30_6",
+                     "matchId":  "m30",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m31_0",
+                     "matchId":  "m31",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "7:0"
+                 },
+                 {
+                     "id":  "t_m31_1",
+                     "matchId":  "m31",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m31_2",
+                     "matchId":  "m31",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m31_3",
+                     "matchId":  "m31",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "6:1"
+                 },
+                 {
+                     "id":  "t_m31_4",
+                     "matchId":  "m31",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m31_5",
+                     "matchId":  "m31",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m31_6",
+                     "matchId":  "m31",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "8:0"
+                 },
+                 {
+                     "id":  "t_m32_0",
+                     "matchId":  "m32",
+                     "playerName":  "Kuba",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m32_1",
+                     "matchId":  "m32",
+                     "playerName":  "Eliška",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m32_2",
+                     "matchId":  "m32",
+                     "playerName":  "Dan",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m32_3",
+                     "matchId":  "m32",
+                     "playerName":  "Tade",
+                     "tipType":  2,
+                     "tipScore":  "2:3"
+                 },
+                 {
+                     "id":  "t_m32_4",
+                     "matchId":  "m32",
+                     "playerName":  "Maruš",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m32_5",
+                     "matchId":  "m32",
+                     "playerName":  "Pavel",
+                     "tipType":  2,
+                     "tipScore":  "2:4"
+                 },
+                 {
+                     "id":  "t_m32_6",
+                     "matchId":  "m32",
+                     "playerName":  "Rey",
+                     "tipType":  2,
+                     "tipScore":  "1:3"
+                 },
+                 {
+                     "id":  "t_m33_0",
+                     "matchId":  "m33",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m33_1",
+                     "matchId":  "m33",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m33_2",
+                     "matchId":  "m33",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "3:1"
+                 },
+                 {
+                     "id":  "t_m33_3",
+                     "matchId":  "m33",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m33_4",
+                     "matchId":  "m33",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m33_5",
+                     "matchId":  "m33",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 },
+                 {
+                     "id":  "t_m33_6",
+                     "matchId":  "m33",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "2:1"
+                 },
+                 {
+                     "id":  "t_m34_0",
+                     "matchId":  "m34",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "4:2"
+                 },
+                 {
+                     "id":  "t_m34_1",
+                     "matchId":  "m34",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m34_2",
+                     "matchId":  "m34",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:2"
+                 },
+                 {
+                     "id":  "t_m34_3",
+                     "matchId":  "m34",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m34_4",
+                     "matchId":  "m34",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m34_5",
+                     "matchId":  "m34",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m34_6",
+                     "matchId":  "m34",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m35_0",
+                     "matchId":  "m35",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "8:0"
+                 },
+                 {
+                     "id":  "t_m35_1",
+                     "matchId":  "m35",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m35_2",
+                     "matchId":  "m35",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m35_3",
+                     "matchId":  "m35",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "7:1"
+                 },
+                 {
+                     "id":  "t_m35_4",
+                     "matchId":  "m35",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "7:0"
+                 },
+                 {
+                     "id":  "t_m35_5",
+                     "matchId":  "m35",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "7:0"
+                 },
+                 {
+                     "id":  "t_m35_6",
+                     "matchId":  "m35",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "3:0"
+                 },
+                 {
+                     "id":  "t_m36_0",
+                     "matchId":  "m36",
+                     "playerName":  "Kuba",
+                     "tipType":  1,
+                     "tipScore":  "4:0"
+                 },
+                 {
+                     "id":  "t_m36_1",
+                     "matchId":  "m36",
+                     "playerName":  "Eliška",
+                     "tipType":  1,
+                     "tipScore":  "5:1"
+                 },
+                 {
+                     "id":  "t_m36_2",
+                     "matchId":  "m36",
+                     "playerName":  "Dan",
+                     "tipType":  1,
+                     "tipScore":  "5:0"
+                 },
+                 {
+                     "id":  "t_m36_3",
+                     "matchId":  "m36",
+                     "playerName":  "Tade",
+                     "tipType":  1,
+                     "tipScore":  "7:1"
+                 },
+                 {
+                     "id":  "t_m36_4",
+                     "matchId":  "m36",
+                     "playerName":  "Maruš",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m36_5",
+                     "matchId":  "m36",
+                     "playerName":  "Pavel",
+                     "tipType":  1,
+                     "tipScore":  "6:0"
+                 },
+                 {
+                     "id":  "t_m36_6",
+                     "matchId":  "m36",
+                     "playerName":  "Rey",
+                     "tipType":  1,
+                     "tipScore":  "4:1"
+                 }
+             ]
+}
