@@ -1,0 +1,13 @@
+{
+  "name": "Tipovačka",
+  "short_name": "Tipovačka",
+  "description": "Tipovačka sportovních zápasů",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0e1a",
+  "theme_color": "#0a0e1a",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
